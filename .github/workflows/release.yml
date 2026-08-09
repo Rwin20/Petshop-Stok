@@ -19,7 +19,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install macOS native dependencies for canvas
         if: matrix.os == 'macos-latest'
@@ -36,6 +36,18 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           build_script_name: false
-          mac: ${{ matrix.os == 'macos-latest' }}
-          windows: ${{ matrix.os == 'windows-latest' }}
-          release_author: "github-actions[bot]"
+          release: true
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: yemmama-stok-${{ matrix.os }}
+          path: |
+            dist-electron/*.exe
+            dist-electron/*.dmg
+            dist-electron/*.zip
+            release/*.exe
+            release/*.dmg
+            release/*.zip
+            dist/*.exe
+            dist/*.dmg
