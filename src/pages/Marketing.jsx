@@ -186,7 +186,7 @@ function Marketing() {
                                 <p className="text-green-400 text-sm font-medium flex items-center gap-2 mb-2">
                                     <QrCode className="w-4 h-4" /> Telefonunuzdan okutun
                                 </p>
-                                <p className="text-slate-500 text-xs text-center">WhatsApp > Bağlı Cihazlar > Cihaz Bağla</p>
+                                <p className="text-slate-500 text-xs text-center">WhatsApp &gt; Bağlı Cihazlar &gt; Cihaz Bağla</p>
                             </div>
                         )}
 
