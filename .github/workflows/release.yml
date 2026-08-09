@@ -21,6 +21,10 @@ jobs:
         with:
           node-version: 18
 
+      - name: Install macOS native dependencies for canvas
+        if: matrix.os == 'macos-latest'
+        run: brew install pkg-config cairo pango libpng jpeg giflib librsvg
+
       - name: Install Dependencies
         run: npm install
 
